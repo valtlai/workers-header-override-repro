@@ -1,0 +1,12 @@
+/*
+	Content-Security-Policy: default-src 'none'
+
+# This does not work correctly when deployed (duplicate CSP):
+/
+	! Content-Security-Policy
+	Content-Security-Policy: default-src 'none'; script-src 'sha256-zSWYYPw1xOaTZBuoVtVHh6zo3hJOLC41SBglOn/7Fcc='
+
+# But this does:
+/other
+	! Content-Security-Policy
+	Content-Security-Policy: default-src 'none'; script-src 'sha256-OIvwVg2U6B8i0Bl3OYolZkIjKvc2y98ki39BpHOFoAo='
